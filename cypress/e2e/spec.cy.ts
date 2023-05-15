@@ -20,10 +20,6 @@ describe.only('Search quest on Odyssey', () => {
   it('Search quest in Odyssey', () => {
     loginToOdyssey();
 
-    cy.visit('https://odyssey.wildcodeschool.com/crews/558')
-    cy.get('[src="https://www.gravatar.com/avatar/57272?d=monsterid&s=300"]').click()
-    cy.contains("Masquerade").click()
-    
     openOdysseyPageFromMenu("Quêtes");
     
     cy.get('[class$="searchField"] input[type="text"]').type('Angular');
@@ -35,10 +31,6 @@ describe.only('Search quest on Odyssey', () => {
   })
   it('Search coworker in Odyssey', () => {
     loginToOdyssey();
-
-    cy.visit('https://odyssey.wildcodeschool.com/crews/558')
-    cy.get('[src="https://www.gravatar.com/avatar/57272?d=monsterid&s=300"]').click()
-    cy.contains("Masquerade").click()
     
     openOdysseyPageFromMenu("Ma Promo");
     cy.contains("William Bouet").parent('[class$="userContent"]').prev().click()
